@@ -1,11 +1,16 @@
-import "./App.css";
-
+import React, { useRef, useState } from "react";
 function App() {
-  const [count, setCount] = useState(0);
+  const inputRef = useRef();
+  function focusOnInput() {
+    inputRef.current.focus();
+  }
 
   return (
     <>
-      <div>Hii</div>
+      Sign up
+      <input ref={inputRef} type="text" />
+      <input type="text" />
+      <button onClick={focusOnInput}>submit</button>
     </>
   );
 }
